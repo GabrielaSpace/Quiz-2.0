@@ -1,5 +1,6 @@
 :root{
     background-color: #f2f2f0;
+    transition: all 0.15s;
 }
 
 
@@ -50,8 +51,12 @@ label{
 input[type='radio']{
     display: none;
 }
+input:checked  {
+    background-color: #11bfae49;
+}
+
 h1{
-    color: #598498;
+    color: #1b3c59d5;
     text-align: center;
 }
 button[type='submit']{
@@ -61,6 +66,6 @@ button[type='submit']{
     border-radius: 5px;
     font-size: 15px;
     font-weight: bold;
-    border: 1px solid #11bfaea9;
+    border: 2px solid #11bfaea9;
     
 }

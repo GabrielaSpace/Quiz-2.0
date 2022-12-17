@@ -1,4 +1,4 @@
-:root{
+:root {
     transition: all 0.15s;
 }
 
@@ -7,9 +7,11 @@ section {
     margin: 10%;
     border-radius: 5px;
 }
+
 h2 {
     padding-top: 10%;
 }
+
 a.empezar {
     display: inline-block;
     padding: 10px 20px;
@@ -18,13 +20,15 @@ a.empezar {
     background-color: #11bfae;
     border: 1px solid #11bfaea9;
     border-radius: 4px;
-    margin: 5%  0;
-  }
-  
+    margin: 5% 0;
+}
+
 #historial {
     padding-bottom: 5%;
 }
-form, section {
+
+form,
+section {
     background-color: #f2f2f0;
     text-align: center;
 }
@@ -70,11 +74,11 @@ input[type='radio'] {
     display: none;
 }
 
-input:checked  +label{
+input:checked+label {
     background-color: #11bfae49;
 }
 
-h1{
+h1 {
     color: #1b3c59d5;
     text-align: center;
     margin-top: 10%;
@@ -92,7 +96,7 @@ button[type='submit'] {
 
 @media screen and (min-width:768px) and (max-width:1024px) {
 
-    form{
+    form {
         padding: 15px;
         text-align: center;
     }
@@ -100,91 +104,94 @@ button[type='submit'] {
 
     fieldset {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
 
-    legend{
+    legend {
         width: 95%;
     }
-    
+
 }
+
 @media screen and (min-width:1025px) {
 
     fieldset {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(3,1fr);
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
     }
 
-    legend{
+    legend {
         width: 97%;
     }
-    label{
+
+    label {
         width: auto;
         border: 1px solid #11bfaea9;
         margin-top: 10%;
-}
-
-@media screen and (min-width: 763px) {
-    section
-    form,
-    legend,
-    label,
-    button[type='submit'] {
-        padding: 4%;
     }
 
-    legend,
-    label,
-    button[type='submit'] {
-        margin-top: 5%;
+    @media screen and (min-width: 763px) {
+
+        section form,
+        legend,
+        label,
+        button[type='submit'] {
+            padding: 4%;
+        }
+
+        legend,
+        label,
+        button[type='submit'] {
+            margin-top: 5%;
+        }
+
+        legend,
+        label {
+            font-size: 1.5em;
+        }
     }
 
-    legend,
-    label {
-        font-size: 1.5em;
-    }
-}
+    @media screen and (min-width: 1072px) {
 
-@media screen and (min-width: 1072px) {
+        legend,
+        label {
+            font-size: 1.6em;
+        }
 
-    legend,
-    label {
-        font-size: 1.6em;
-    }
+        form,
+        legend,
+        label,
+        button[type='submit'] {
+            padding: 3%;
+        }
 
-    form,
-    legend,
-    label,
-    button[type='submit'] {
-        padding: 3%;
-    }
-
-    legend,
-    label,
-    button[type='submit'] {
-        margin-top: 3%;
-    }
-}
-
-@media screen and (min-width: 1300px) {
-
-    legend,
-    label {
-        font-size: 1.7em;
+        legend,
+        label,
+        button[type='submit'] {
+            margin-top: 3%;
+        }
     }
 
-    form,
-    legend,
-    label,
-    button[type='submit'] {
-        padding: 2%;
-    }
+    @media screen and (min-width: 1300px) {
 
-    legend,
-    label,
-    button[type='submit'] {
-        margin-top: 2%;
+        legend,
+        label {
+            font-size: 1.7em;
+        }
+
+        form,
+        legend,
+        label,
+        button[type='submit'] {
+            padding: 2%;
+        }
+
+        legend,
+        label,
+        button[type='submit'] {
+            margin-top: 2%;
+        }
     }
 }

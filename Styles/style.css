@@ -1,10 +1,31 @@
-:root {
-    background-color: #f2f2f0;
+body {
+    background-color: #7d9fb44a;
 }
 
-
-form {
-    background-color: #7d9fb44a;
+section {
+    width: 80%;
+    margin: 10%;
+    border-radius: 5px;
+}
+h2 {
+    padding-top: 10%;
+}
+a.empezar {
+    display: inline-block;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #11bfae;
+    border: 1px solid #11bfaea9;
+    border-radius: 4px;
+    margin: 5%  0;
+  }
+  
+#historial {
+    padding-bottom: 5%;
+}
+form, section {
+    background-color: #f2f2f0;
     text-align: center;
 }
 
@@ -54,6 +75,7 @@ input[type='radio'].checked {
 h1 {
     color: #598498;
     text-align: center;
+    margin-top: 10%;
 }
 
 button[type='submit'] {
@@ -67,7 +89,7 @@ button[type='submit'] {
 }
 
 @media screen and (min-width: 763px) {
-
+    section
     form,
     legend,
     label,

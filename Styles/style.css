@@ -1,0 +1,66 @@
+:root{
+    background-color: #f2f2f0;
+}
+
+
+form{
+    background-color: #7d9fb44a;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+
+fieldset{
+    border: none;
+    width: auto;
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+}
+
+legend{
+background-color: #11bfae;
+color: #f2f2f0;
+font-weight: bolder;
+font-size: 20px;
+border-radius: 5px;
+text-align: center;
+height: 40px;
+line-height: 40px;
+width: 90%;
+padding: 10px;
+}
+
+label{
+    background-color: #f2f2f0;
+    color: #1b3c59;
+    font-weight: bolder;
+    font-size: 18px;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    height: 40px;
+    line-height: 40px;
+    width: 90%;
+    text-align: center;
+}
+
+input[type='radio']{
+    display: none;
+}
+h1{
+    color: #598498;
+    text-align: center;
+}
+button[type='submit']{
+    background-color: #11bfae;
+    color: #f2f2f0;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: bold;
+    border: 1px solid #11bfaea9;
+    
+}

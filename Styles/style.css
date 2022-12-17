@@ -1,5 +1,5 @@
-body {
-    background-color: #7d9fb44a;
+:root{
+    transition: all 0.15s;
 }
 
 section {
@@ -29,6 +29,8 @@ form, section {
     text-align: center;
 }
 
+
+fieldset,
 form,
 legend,
 label,
@@ -68,12 +70,12 @@ input[type='radio'] {
     display: none;
 }
 
-input[type='radio'].checked {
-    background-color: #11bfae;
+input:checked  +label{
+    background-color: #11bfae49;
 }
 
-h1 {
-    color: #598498;
+h1{
+    color: #1b3c59d5;
     text-align: center;
     margin-top: 10%;
 }
@@ -84,8 +86,44 @@ button[type='submit'] {
     padding: 3%;
     font-size: 1.2em;
     font-weight: bold;
-    border: 1px solid #11bfaea9;
-    margin-top: 10%;
+    border: 2px solid #11bfaea9;
+}
+
+
+@media screen and (min-width:768px) and (max-width:1024px) {
+
+    form{
+        padding: 15px;
+        text-align: center;
+    }
+
+
+    fieldset {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+
+    legend{
+        width: 95%;
+    }
+    
+}
+@media screen and (min-width:1025px) {
+
+    fieldset {
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-template-rows: repeat(3,1fr);
+    }
+
+    legend{
+        width: 97%;
+    }
+    label{
+        width: auto;
+        border: 1px solid #11bfaea9;
+        margin-top: 10%;
 }
 
 @media screen and (min-width: 763px) {

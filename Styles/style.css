@@ -1,18 +1,22 @@
-:root{
+:root {
     background-color: #f2f2f0;
 }
 
 
-form{
+form {
     background-color: #7d9fb44a;
-    padding: 10px;
-    border-radius: 5px;
     text-align: center;
 }
 
+form,
+legend,
+label,
+button[type='submit'] {
+    border-radius: 5px;
+    padding: 5%;
+}
 
-
-fieldset{
+fieldset {
     border: none;
     width: auto;
     display: flex;
@@ -20,47 +24,107 @@ fieldset{
     align-items: center;
 }
 
-legend{
-background-color: #11bfae;
-color: #f2f2f0;
-font-weight: bolder;
-font-size: 20px;
-border-radius: 5px;
-text-align: center;
-height: 40px;
-line-height: 40px;
-width: 90%;
-padding: 10px;
+legend,
+label {
+    font-size: 1.3em;
+    text-align: center;
+    width: 90%;
+    font-weight: bolder;
+    margin-top: 10%;
 }
 
-label{
+legend {
+    background-color: #11bfae;
+    color: #f2f2f0;
+}
+
+label {
     background-color: #f2f2f0;
     color: #1b3c59;
-    font-weight: bolder;
-    font-size: 18px;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 5px;
-    height: 40px;
-    line-height: 40px;
-    width: 90%;
-    text-align: center;
 }
 
-input[type='radio']{
+input[type='radio'] {
     display: none;
 }
-h1{
+
+input[type='radio'].checked {
+    background-color: #11bfae;
+}
+
+h1 {
     color: #598498;
     text-align: center;
 }
-button[type='submit']{
+
+button[type='submit'] {
     background-color: #11bfae;
     color: #f2f2f0;
-    padding: 10px;
-    border-radius: 5px;
-    font-size: 15px;
+    padding: 3%;
+    font-size: 1.2em;
     font-weight: bold;
     border: 1px solid #11bfaea9;
-    
+    margin-top: 10%;
+}
+
+@media screen and (min-width: 763px) {
+
+    form,
+    legend,
+    label,
+    button[type='submit'] {
+        padding: 4%;
+    }
+
+    legend,
+    label,
+    button[type='submit'] {
+        margin-top: 5%;
+    }
+
+    legend,
+    label {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 1072px) {
+
+    legend,
+    label {
+        font-size: 1.6em;
+    }
+
+    form,
+    legend,
+    label,
+    button[type='submit'] {
+        padding: 3%;
+    }
+
+    legend,
+    label,
+    button[type='submit'] {
+        margin-top: 3%;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+
+    legend,
+    label {
+        font-size: 1.7em;
+    }
+
+    form,
+    legend,
+    label,
+    button[type='submit'] {
+        padding: 2%;
+    }
+
+    legend,
+    label,
+    button[type='submit'] {
+        margin-top: 2%;
+    }
 }

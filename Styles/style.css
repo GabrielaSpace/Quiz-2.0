@@ -6,6 +6,7 @@
     --Persian-Green: #0DA092;
     --Cultured: #f2f2f0;
     --Indigo-Dye: #1B3C59;
+    --Ivory: #FFFFEB;
 }
 
 body {
@@ -103,7 +104,7 @@ input:checked+label {
 h1 {
     color: var(--Dark-Electric-Blue);
     text-align: center;
-    margin-top: 10%;
+    margin-top: 4%;
 }
 
 button[type='submit'] {
@@ -116,88 +117,6 @@ button[type='submit'] {
     margin-top: 10%;
 }
 
-
-
-    @media screen and (min-width: 763px) {
-
-        section form,
-        legend,
-        label,
-        button[type='submit'] {
-            padding: 4%;
-        }
-
-        legend,
-        label,
-        button[type='submit'] {
-            margin-top: 5%;
-        }
-
-        legend,
-        label {
-            font-size: 1.5em;
-        }
-        form {
-            padding: 15px;
-            text-align: center;
-        }
-    
-    
-        #div-questions {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-template-rows: repeat(2, 1fr);
-        }
-    
-        legend {
-            width: 95%;
-        }
-    }
-
-    @media screen and (min-width: 1072px) {
-
-        legend,
-        label {
-            font-size: 1.6em;
-        }
-
-        form,
-        legend,
-        label,
-        button[type='submit'] {
-            padding: 3%;
-        }
-
-        legend,
-        label,
-        button[type='submit'] {
-            margin-top: 3%;
-        }
-    }
-
-    @media screen and (min-width: 1300px) {
-
-        legend,
-        label {
-            font-size: 1.7em;
-        }
-
-        form,
-        legend,
-        label,
-        button[type='submit'] {
-            padding: 2%;
-        }
-
-        legend,
-        label,
-        button[type='submit'] {
-            margin-top: 2%;
-        }
-    }
-
-}
-
 /*Home */
 
 #main-home{
@@ -205,30 +124,29 @@ button[type='submit'] {
     flex-flow: column wrap;
     justify-content: center;
     align-items: center;
-
 }
  #bienvenida, #estadisticas{
     border-radius: 7px;
-    background-color: #ffffeb ;
+    background-color: var(--Ivory) ;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.26);
-    margin: 15px;
-    padding: 10px;
-    width: 300px;
+    margin: 3%;
+    width: 90%;
     align-items: center;
 }
 
 
 /* Resultados */
  #main-results{
-   background-color: #ffffeb;
+   background-color: var(--Ivory);
    border-radius: 7px;
-   padding: 10px;
+   padding: 2%;
    display: flex;
    flex-flow: column wrap;
    justify-content: center;
    align-items: center;
-   margin: 15px;
-
+   margin: 2.5%;
+   width: 90%;
+   height: 800px;
 }  
 
 
@@ -237,14 +155,118 @@ button[type='submit'] {
     height: 150px;
     line-height: 150px;
     border-radius: 50%;
-    background-color: #11bfae;
+    background-color: var(--Tiffany-Blue);
 }
 
 #número-aciertos i{
     text-align: center;
-    color: #f2f2f0;
+    color: var(--Cultured);
     font-size: 50px;
     align-items: center;
 }
+
+#texto-resultados {
+    font-size: 1.5em;
+}
+
+
+
+@media screen and (min-width: 763px) {
+
+    section form,
+    legend,
+    label,
+    button[type='submit'] {
+        padding: 4%;
+    }
+
+    legend,
+    label,
+    button[type='submit'] {
+        margin-top: 5%;
+    }
+
+    legend,
+    label {
+        font-size: 1.5em;
+    }
+    form {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 3em;
+    }
+
+    #div-questions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    legend {
+        width: 95%;
+    }
+    #texto-resultados {
+        font-size: 1.8em;
+    }
+    
+  
+    #empezar, #texto-bienvenida {
+        padding-top: 10%;
+    }
+}
+
+@media screen and (min-width: 1072px) {
+
+    legend,
+    label {
+        font-size: 1.6em;
+    }
+
+    form,
+    legend,
+    label,
+    button[type='submit'] {
+        padding: 3%;
+    }
+
+    legend,
+    label,
+    button[type='submit'] {
+        margin-top: 3%;
+    }
+    #texto-resultados {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+
+    legend,
+    label {
+        font-size: 1.7em;
+    }
+
+    form,
+    legend,
+    label,
+    button[type='submit'] {
+        padding: 2%;
+    }
+
+    legend,
+    label,
+    button[type='submit'] {
+        margin-top: 2%;
+    }
+    #texto-resultados {
+        font-size: 2.5em;
+    }
+}
+
+
+
 
 

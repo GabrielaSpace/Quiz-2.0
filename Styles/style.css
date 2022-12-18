@@ -1,42 +1,52 @@
-<<<<<<< Updated upstream
-:root{
-=======
 :root {
-    background-color: #f2f2f0;
->>>>>>> Stashed changes
     transition: all 0.15s;
     font-family: 'Roboto', sans-serif;
+    --Tiffany-Blue: #11BFAE;
+    --Dark-Electric-Blue: #405D74;
+    --Persian-Green: #0DA092;
+    --Cultured: #f2f2f0;
+    --Indigo-Dye: #1B3C59;
 }
 
-<<<<<<< Updated upstream
+body {
+    background-color: var(--Cultured);
+}
+
+
 section {
     width: 80%;
     margin: 10%;
     border-radius: 5px;
 }
-=======
 
-
->>>>>>> Stashed changes
 h2 {
     padding-top: 10%;
 }
+
 a.empezar {
     display: inline-block;
     padding: 10px 20px;
     text-decoration: none;
     color: #fff;
-    background-color: #11bfae;
-    border: 1px solid #11bfaea9;
+    background-color: var(--Tiffany-Blue);
+    border: 2px solid var(--Persian-Green);
     border-radius: 4px;
-    margin: 5%  0;
-  }
-  
+    margin: 5% 0;
+}
+
 #historial {
     padding-bottom: 5%;
 }
-form, section {
-    background-color: #f2f2f0;
+
+#div-questions {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
+}
+
+form,
+section {
+    background-color: var(--Cultured);
     text-align: center;
 }
 
@@ -64,17 +74,19 @@ label {
     text-align: center;
     width: 90%;
     font-weight: bolder;
-    margin-top: 10%;
+    
 }
 
 legend {
-    background-color: #11bfae;
-    color: #f2f2f0;
+    background-color: var(--Tiffany-Blue);
+    color: var(--Cultured);
+    border: 2px solid var(--Persian-Green);
 }
 
 label {
-    background-color: #f2f2f0;
-    color: #1b3c59;
+    background-color: var(--Cultured);
+    color: var(--Indigo-Dye);
+    margin-top: 10%;
 }
 
 input[type='radio'] {
@@ -82,124 +94,108 @@ input[type='radio'] {
     
 }
 
-input:checked  +label{
-    background-color: #11bfae49;
+input:checked+label {
+    background-color: var(--Dark-Electric-Blue);
     cursor: pointer;
+    color: white;
 }
 
-h1{
-    color: #1b3c59d5;
+h1 {
+    color: var(--Dark-Electric-Blue);
     text-align: center;
     margin-top: 10%;
 }
 
 button[type='submit'] {
-    background-color: #11bfae;
-    color: #f2f2f0;
+    background-color: var(--Tiffany-Blue);
+    color: var(--Cultured);
     padding: 3%;
     font-size: 1.2em;
     font-weight: bold;
-    border: 2px solid #11bfaea9;
+    border: 2px solid var(--Persian-Green);
+    margin-top: 10%;
 }
 
 
-@media screen and (min-width:768px) and (max-width:1024px) {
 
-    form{
-        padding: 15px;
-        text-align: center;
-    }
+    @media screen and (min-width: 763px) {
 
+        section form,
+        legend,
+        label,
+        button[type='submit'] {
+            padding: 4%;
+        }
 
-    fieldset {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(3,1fr);
-    }
+        legend,
+        label,
+        button[type='submit'] {
+            margin-top: 5%;
+        }
 
-    legend{
-        width: 95%;
-    }
+        legend,
+        label {
+            font-size: 1.5em;
+        }
+        form {
+            padding: 15px;
+            text-align: center;
+        }
     
-}
-@media screen and (min-width:1025px) {
-
-    fieldset {
-        display: grid;
-        grid-template-columns: repeat(2,1fr);
-        grid-template-rows: repeat(3,1fr);
+    
+        #div-questions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+    
+        legend {
+            width: 95%;
+        }
     }
 
-    legend{
-        width: 97%;
-    }
-    label{
-        width: auto;
-        border: 1px solid #11bfaea9;
-        margin-top: 10%;
-}
+    @media screen and (min-width: 1072px) {
 
-@media screen and (min-width: 763px) {
-    section
-    form,
-    legend,
-    label,
-    button[type='submit'] {
-        padding: 4%;
-    }
+        legend,
+        label {
+            font-size: 1.6em;
+        }
 
-    legend,
-    label,
-    button[type='submit'] {
-        margin-top: 5%;
+        form,
+        legend,
+        label,
+        button[type='submit'] {
+            padding: 3%;
+        }
+
+        legend,
+        label,
+        button[type='submit'] {
+            margin-top: 3%;
+        }
     }
 
-    legend,
-    label {
-        font-size: 1.5em;
-    }
-}
+    @media screen and (min-width: 1300px) {
 
-@media screen and (min-width: 1072px) {
+        legend,
+        label {
+            font-size: 1.7em;
+        }
 
-    legend,
-    label {
-        font-size: 1.6em;
-    }
+        form,
+        legend,
+        label,
+        button[type='submit'] {
+            padding: 2%;
+        }
 
-    form,
-    legend,
-    label,
-    button[type='submit'] {
-        padding: 3%;
-    }
-
-    legend,
-    label,
-    button[type='submit'] {
-        margin-top: 3%;
-    }
-}
-
-@media screen and (min-width: 1300px) {
-
-    legend,
-    label {
-        font-size: 1.7em;
+        legend,
+        label,
+        button[type='submit'] {
+            margin-top: 2%;
+        }
     }
 
-    form,
-    legend,
-    label,
-    button[type='submit'] {
-        padding: 2%;
-    }
-
-    legend,
-    label,
-    button[type='submit'] {
-        margin-top: 2%;
-    }
 }
 
 /*Home */
@@ -250,4 +246,5 @@ button[type='submit'] {
     font-size: 50px;
     align-items: center;
 }
+
 

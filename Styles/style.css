@@ -1,6 +1,9 @@
 :root {
     transition: all 0.15s;
     font-family: 'Roboto', sans-serif;
+    --Tiffany-Blue: #11bfae;
+    --Dark-Electric-Blue: #405D74;
+    --Persian-Green: #0DA092;
 }
 
 section {
@@ -18,14 +21,20 @@ a.empezar {
     padding: 10px 20px;
     text-decoration: none;
     color: #fff;
-    background-color: #11bfae;
-    border: 1px solid #11bfaea9;
+    background-color: var(--Tiffany-Blue);
+    border: 2px solid var(--Persian-Green);
     border-radius: 4px;
     margin: 5% 0;
 }
 
 #historial {
     padding-bottom: 5%;
+}
+
+#div-questions {
+    display: flex;
+    flex-flow: row wrap;
+    width: 100%;
 }
 
 form,
@@ -58,17 +67,19 @@ label {
     text-align: center;
     width: 90%;
     font-weight: bolder;
-    margin-top: 10%;
+    
 }
 
 legend {
-    background-color: #11bfae;
+    background-color: var(--Tiffany-Blue);
     color: #f2f2f0;
+    border: 2px solid var(--Persian-Green);
 }
 
 label {
     background-color: #f2f2f0;
     color: #1b3c59;
+    margin-top: 10%;
 }
 
 input[type='radio'] {
@@ -77,63 +88,28 @@ input[type='radio'] {
 }
 
 input:checked+label {
-    background-color: #11bfae49;
+    background-color: var(--Dark-Electric-Blue);
     cursor: pointer;
+    color: white;
 }
 
 h1 {
-    color: #1b3c59d5;
+    color: var(--Dark-Electric-Blue);
     text-align: center;
     margin-top: 10%;
 }
 
 button[type='submit'] {
-    background-color: #11bfae;
+    background-color: var(--Tiffany-Blue);
     color: #f2f2f0;
     padding: 3%;
     font-size: 1.2em;
     font-weight: bold;
-    border: 2px solid #11bfaea9;
+    border: 2px solid var(--Persian-Green);
+    margin-top: 10%;
 }
 
 
-@media screen and (min-width:768px) and (max-width:1024px) {
-
-    form {
-        padding: 15px;
-        text-align: center;
-    }
-
-
-    fieldset {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-    }
-
-    legend {
-        width: 95%;
-    }
-
-}
-
-@media screen and (min-width:1025px) {
-
-    fieldset {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(3, 1fr);
-    }
-
-    legend {
-        width: 97%;
-    }
-
-    label {
-        width: auto;
-        border: 1px solid #11bfaea9;
-        margin-top: 10%;
-    }
 
     @media screen and (min-width: 763px) {
 
@@ -153,6 +129,21 @@ button[type='submit'] {
         legend,
         label {
             font-size: 1.5em;
+        }
+        form {
+            padding: 15px;
+            text-align: center;
+        }
+    
+    
+        #div-questions {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+        }
+    
+        legend {
+            width: 95%;
         }
     }
 
@@ -197,4 +188,3 @@ button[type='submit'] {
             margin-top: 2%;
         }
     }
-}

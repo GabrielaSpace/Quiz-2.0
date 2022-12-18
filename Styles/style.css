@@ -1,13 +1,23 @@
+<<<<<<< Updated upstream
 :root{
+=======
+:root {
+    background-color: #f2f2f0;
+>>>>>>> Stashed changes
     transition: all 0.15s;
     font-family: 'Roboto', sans-serif;
 }
 
+<<<<<<< Updated upstream
 section {
     width: 80%;
     margin: 10%;
     border-radius: 5px;
 }
+=======
+
+
+>>>>>>> Stashed changes
 h2 {
     padding-top: 10%;
 }
@@ -191,3 +201,53 @@ button[type='submit'] {
         margin-top: 2%;
     }
 }
+
+/*Home */
+
+#main-home{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+
+}
+ #bienvenida, #estadisticas{
+    border-radius: 7px;
+    background-color: #ffffeb ;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.26);
+    margin: 15px;
+    padding: 10px;
+    width: 300px;
+    align-items: center;
+}
+
+
+/* Resultados */
+ #main-results{
+   background-color: #ffffeb;
+   border-radius: 7px;
+   padding: 10px;
+   display: flex;
+   flex-flow: column wrap;
+   justify-content: center;
+   align-items: center;
+   margin: 15px;
+
+}  
+
+
+#número-aciertos p{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    background-color: #11bfae;
+}
+
+#número-aciertos i{
+    text-align: center;
+    color: #f2f2f0;
+    font-size: 50px;
+    align-items: center;
+}
+

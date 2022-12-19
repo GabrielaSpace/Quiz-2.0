@@ -1,0 +1,216 @@
+[33mcommit b0d6305f682dd65f95ff22c38d116e636c19986a[m[33m ([m[1;36mHEAD -> [m[1;32mdevelop[m[33m, [m[1;31morigin/develop[m[33m)[m
+Merge: c0b3bb3 d646495
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sun Dec 18 19:01:39 2022 +0100
+
+    Merge branch 'develop' into develop
+
+[33mcommit c0b3bb328a1ee323dbefcc2801973812e51337e9[m
+Author: Gabriela Garcia Serrano <118684159+GabrielaSpace@users.noreply.github.com>
+Date:   Sun Dec 18 18:41:42 2022 +0100
+
+    home css
+
+[33mcommit d6464955b246eb65fd31e45a81f59d352f6db126[m
+Author: ZeberMVP <rubeen722@gmail.com>
+Date:   Sun Dec 18 16:59:32 2022 +0100
+
+    edit/results mobile first
+
+[33mcommit 4cd290d91918d17061571066362a4dfc5a6a9a2f[m
+Merge: c0f48d2 cf58e05
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sun Dec 18 16:04:03 2022 +0100
+
+    Merge pull request #12 from GabrielaSpace/develop
+    
+    estilos home, results
+
+[33mcommit cf58e05f66ecc83b4ecb534c9b86a9a65d990cf1[m
+Merge: a0d7698 c0f48d2
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sun Dec 18 16:03:55 2022 +0100
+
+    Merge branch 'develop' into develop
+
+[33mcommit a0d76985b42d073f1260642d142b8b760e940567[m
+Author: Gabriela Garcia Serrano <118684159+GabrielaSpace@users.noreply.github.com>
+Date:   Sun Dec 18 15:49:26 2022 +0100
+
+    estilos home, results
+
+[33mcommit c0f48d2e7dec7da9f6ac3bb2c262a7a124d3498e[m
+Merge: 7932fb0 9abd977
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sun Dec 18 14:34:39 2022 +0100
+
+    Merge pull request #10 from ZeberMVP/main
+    
+    update
+
+[33mcommit 9abd977a529302ad9353982af0eeb244dbf8bbc1[m
+Merge: 3a3b203 7932fb0
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sun Dec 18 14:30:37 2022 +0100
+
+    Merge pull request #9 from ZeberMVP/develop
+    
+    add/div para labels y variables para colores
+
+[33mcommit 7932fb0005a941bc0a52bed42d6df4484d619370[m
+Author: ZeberMVP <rubeen722@gmail.com>
+Date:   Sun Dec 18 12:17:32 2022 +0100
+
+    add/div para labels y variables para colores
+
+[33mcommit 3a3b203b24173f3b0877debb911ad52124ceae1d[m
+Merge: f449a2c d7fd915
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sun Dec 18 11:24:55 2022 +0100
+
+    Merge pull request #8 from ZeberMVP/develop
+    
+    Merge pull request #7 from ZeberMVP/main
+
+[33mcommit d7fd915a37586484baba3d716518df26aff7903b[m
+Merge: e882436 f449a2c
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sun Dec 18 11:24:20 2022 +0100
+
+    Merge pull request #7 from ZeberMVP/main
+    
+    edit/compatibilidad con el main
+
+[33mcommit f449a2c14678208aebff8868d732027948e9824b[m
+Merge: dd050cf e882436
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sun Dec 18 11:23:19 2022 +0100
+
+    Merge pull request #6 from ZeberMVP/develop
+    
+    Develop
+
+[33mcommit e8824365e02c17595395af1e04dc969d900205df[m
+Merge: d20dbbf 647403b
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sun Dec 18 10:43:17 2022 +0100
+
+    Merge pull request #5 from GabrielaSpace/develop
+    
+    Develop
+
+[33mcommit 647403bef9472056c4afe4fd7208c33ae0529a73[m
+Author: Gabriela Garcia Serrano <118684159+GabrielaSpace@users.noreply.github.com>
+Date:   Sun Dec 18 01:22:48 2022 +0100
+
+    link fuentes
+
+[33mcommit ed441d27a2cd9d1ad8d14040f2c1907f96489fde[m
+Merge: 5d2a190 107f688
+Author: Gabriela Garcia Serrano <118684159+GabrielaSpace@users.noreply.github.com>
+Date:   Sun Dec 18 00:59:29 2022 +0100
+
+    Merge branch 'develop' of https://github.com/GabrielaSpace/Quiz-2.0 into develop
+
+[33mcommit 5d2a190b855093c77235acea4fb1b94cdc3d0567[m
+Author: Gabriela Garcia Serrano <118684159+GabrielaSpace@users.noreply.github.com>
+Date:   Sun Dec 18 00:02:37 2022 +0100
+
+    css con opciones
+
+[33mcommit dd050cf912fac780e479c92d2e4fb1f61de62fc1[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: 69bca4b d20dbbf
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sat Dec 17 22:00:38 2022 +0100
+
+    Merge pull request #4 from ZeberMVP/develop
+    
+    Develop
+
+[33mcommit 9d85839f84970684855fcbf4a9f0ff263a769aaf[m
+Author: Gabriela Garcia Serrano <118684159+GabrielaSpace@users.noreply.github.com>
+Date:   Sat Dec 17 20:23:25 2022 +0100
+
+    css actualizado
+
+[33mcommit d20dbbf6f64db1aaf3bcfe9f47f0c091f9cd2d27[m
+Author: ZeberMVP <rubeen722@gmail.com>
+Date:   Sat Dec 17 18:20:48 2022 +0100
+
+    edit/format
+
+[33mcommit 89413c3f8617f67d95067c7e88c389ef303b0597[m
+Merge: c79dbd5 107f688
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sat Dec 17 18:15:35 2022 +0100
+
+    Merge pull request #3 from GabrielaSpace/develop
+    
+    Develop
+
+[33mcommit 107f68881e36b4eef16e663dafbd1545e6d53ed5[m
+Merge: 5e900b9 c79dbd5
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sat Dec 17 18:15:24 2022 +0100
+
+    Merge branch 'develop' into develop
+
+[33mcommit 5e900b9e482874e663fecf5fc7bf020bed258d01[m
+Author: Gabriela Garcia Serrano <118684159+GabrielaSpace@users.noreply.github.com>
+Date:   Sat Dec 17 17:55:07 2022 +0100
+
+    CSS con grid
+
+[33mcommit c79dbd53dafc517b25a20ada4b30a983cd149ad3[m
+Author: ZeberMVP <rubeen722@gmail.com>
+Date:   Sat Dec 17 17:00:59 2022 +0100
+
+    add/home.html y results.html
+
+[33mcommit 05617f1e960a41399019d93856aa8bfaf1cabb8d[m
+Author: ZeberMVP <rubeen722@gmail.com>
+Date:   Sat Dec 17 13:30:49 2022 +0100
+
+    add/media queries
+
+[33mcommit d41c3c375fa86e1505624003c48cb6fc94f16e54[m
+Author: Gabriela Garcia Serrano <118684159+GabrielaSpace@users.noreply.github.com>
+Date:   Sat Dec 17 12:49:52 2022 +0100
+
+    cambio de color pregunta seleccionada
+
+[33mcommit 69bca4b1d4245670abe442b911d0a22da574ef63[m
+Merge: ee28a8e dd5105d
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Sat Dec 17 12:09:39 2022 +0100
+
+    Merge pull request #2 from GabrielaSpace/develop
+    
+    css quiz
+
+[33mcommit dd5105d94256e89c921fc98a5beed1c4fafe5fbf[m
+Author: Gabriela Garcia Serrano <118684159+GabrielaSpace@users.noreply.github.com>
+Date:   Sat Dec 17 11:49:57 2022 +0100
+
+    css quiz
+
+[33mcommit ee28a8ef8771dde1f17e019f3dba2f4789bcdcad[m
+Merge: 5f0f0ae cc205d9
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Fri Dec 16 18:56:09 2022 +0100
+
+    Merge pull request #1 from ZeberMVP/develop
+    
+    add/base
+
+[33mcommit cc205d911d13a6f5d483752db44e5e7033343576[m
+Author: ZeberMVP <rubeen722@gmail.com>
+Date:   Fri Dec 16 18:55:38 2022 +0100
+
+    add/base
+
+[33mcommit 5f0f0aef00270028eb9a0ff862a02b1e3109054d[m
+Author: ZeberMVP <106594858+ZeberMVP@users.noreply.github.com>
+Date:   Fri Dec 16 18:41:25 2022 +0100
+
+    Initial commit

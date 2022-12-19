@@ -11,3 +11,5 @@ var data = {
   // that is resolving to our chart container element. The Second parameter
   // is the actual data object.
   new Chartist.Line('.ct-chart', data);
+
+  

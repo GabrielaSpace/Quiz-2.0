@@ -8,16 +8,7 @@ function shuffle(array) {
 
 let currentQuestion = 0;
 
-function showQuestion(index) {
-    let fieldsets = document.querySelectorAll("fieldset");
-    for (let i = 0; i < fieldsets.length; i++) {
-        if (i === index) {
-            fieldsets[i].style.display = "block";  
-        } else {
-            fieldsets[i].style.display = "none";  
-        }
-    }
-}
+
 
 async function getQuestions() {
     let resp = await fetch("https://opentdb.com/api.php?amount=10&type=multiple");
@@ -26,10 +17,23 @@ async function getQuestions() {
     return questions;
 }
 
+function showQuestion(index) {
+    let fieldsets = document.querySelectorAll("fieldset");
+    for (let i = 0; i < fieldsets.length; i++) {
+        if (i === index) {
+            fieldsets[i].style.display = "block"; 
+        } else {
+            fieldsets[i].style.display = "none";  
+        }
+    }
+}
+
 let form = document.querySelector("form");
+let counter = 0;
 
 getQuestions().then(questions => {
     for (element of questions.results) {
+        
         let structure = {
             "question": element.question,
             "answers": shuffle([...element.incorrect_answers, element.correct_answer]),
@@ -38,6 +42,8 @@ getQuestions().then(questions => {
 
         let fieldset = document.createElement("fieldset");
         form.appendChild(fieldset);
+        fieldset.setAttribute("id", "fieldset" + counter);
+        counter++
 
         let legend = document.createElement("legend");
         legend.innerHTML = structure.question;
@@ -52,7 +58,7 @@ getQuestions().then(questions => {
 
             input.setAttribute("name", structure.answers[0]);
             input.setAttribute("id", answer + "-field");
-            input.setAttribute("id", answer);
+            input.setAttribute("value", answer);
             input.setAttribute("type", "radio");
 
             label.innerHTML = answer;

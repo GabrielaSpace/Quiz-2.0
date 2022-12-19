@@ -64,9 +64,13 @@ button[type='submit'] {
 fieldset {
     border: none;
     width: auto;
-    display: flex;
+    display: none;
     flex-flow: column wrap;
     align-items: center;
+}
+
+#fieldset0 {
+    display: block;
 }
 
 legend,

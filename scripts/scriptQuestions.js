@@ -1,3 +1,4 @@
+//Desordenar arrays
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
@@ -9,33 +10,34 @@ function shuffle(array) {
 let currentQuestion = 0;
 
 
-
+//Sacar preguntas de la api
 async function getQuestions() {
     let resp = await fetch("https://opentdb.com/api.php?amount=10&type=multiple");
     let questions = await resp.json();
-    showQuestion(0);  
+    showQuestion(0);
     return questions;
 }
 
+//Hacer que las preguntas salgan de una en una
 function showQuestion(index) {
     let fieldsets = document.querySelectorAll("fieldset");
     for (let i = 0; i < fieldsets.length; i++) {
         if (i === index) {
-            fieldsets[i].style.display = "block"; 
+            fieldsets[i].style.display = "block";
         } else {
-            fieldsets[i].style.display = "none";  
+            fieldsets[i].style.display = "none";
         }
     }
 }
 
 let form = document.querySelector("form");
 let counter = 0;
-let correctCounter =0;
-let incorrectCounter=0;
+let correctCounter = 0;
+let incorrectCounter = 0;
 
+//Pintar en el DOM
 getQuestions().then(questions => {
     for (element of questions.results) {
-        
         let structure = {
             "question": element.question,
             "answers": shuffle([...element.incorrect_answers, element.correct_answer]),
@@ -74,36 +76,38 @@ getQuestions().then(questions => {
         button.innerHTML = "Enviar respuesta";
         fieldset.appendChild(button);
 
-        
-        button.addEventListener("click", event => {
-          event.preventDefault();
 
+        button.addEventListener("click", event => {
+            event.preventDefault();
+
+            //Siguiente pregunta o resultados
             if (currentQuestion < 9) {
                 currentQuestion++;
                 showQuestion(currentQuestion);
             } else {
                 window.location.assign("results.html");
             }
-             //validación por pregunta 
+            //validación por pregunta 
             let inputs = document.querySelectorAll('input[type=radio]:checked');
-            let values=[];
+            let values = [];
 
-            for(input of inputs){
+            for (input of inputs) {
                 values.push(input.value)
             }
-            if(values.includes(structure.solution)){
+            if (values.includes(structure.solution)) {
                 correctCounter++
-                }else{
-                    incorrectCounter++;
-                }
-        });  
+            } else {
+                incorrectCounter++;
+            }
+        });
     }
 });
 
-let score =document.querySelector('i');
+//Mostrar resultados
+let score = document.querySelector('i');
 
-if(correctCounter<10){
-    score.innerHTML = '0'+correctCounter +'/10';
-}else{
-    score.innerHTML = correctCounter +'/10';
+if (correctCounter < 10) {
+    score.innerHTML = '0' + correctCounter + '/10';
+} else {
+    score.innerHTML = correctCounter + '/10';
 }

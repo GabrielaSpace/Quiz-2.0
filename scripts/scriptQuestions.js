@@ -86,6 +86,15 @@ getQuestions().then(questions => {
                 showQuestion(currentQuestion);
             } else {
                 window.location.assign("results.html");
+                //Almacenamiento de resultados
+                const currentDate = new Date();
+                const data = {
+                    correctCounter: correctCounter,
+                    date: currentDate.toString()
+                };
+
+                const dataString = JSON.stringify(data);
+                localStorage.setItem(data.date, dataString);
             }
             //validación por pregunta 
             let inputs = document.querySelectorAll('input[type=radio]:checked');
@@ -103,11 +112,3 @@ getQuestions().then(questions => {
     }
 });
 
-//Mostrar resultados
-let score = document.querySelector('i');
-
-if (correctCounter < 10) {
-    score.innerHTML = '0' + correctCounter + '/10';
-} else {
-    score.innerHTML = correctCounter + '/10';
-}

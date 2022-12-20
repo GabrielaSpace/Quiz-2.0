@@ -30,6 +30,8 @@ function showQuestion(index) {
 
 let form = document.querySelector("form");
 let counter = 0;
+let correctCounter =0;
+let incorrectCounter=0;
 
 getQuestions().then(questions => {
     for (element of questions.results) {
@@ -46,7 +48,7 @@ getQuestions().then(questions => {
         counter++
 
         let legend = document.createElement("legend");
-        legend.innerHTML = structure.question;
+        legend.innerHTML = strsucture.question;
         fieldset.appendChild(legend)
 
         let labels = document.createElement("div")
@@ -63,7 +65,6 @@ getQuestions().then(questions => {
 
             label.innerHTML = answer;
             label.setAttribute("for", answer + "-field");
-
             labels.appendChild(input);
             labels.appendChild(label);
         }
@@ -75,14 +76,37 @@ getQuestions().then(questions => {
 
         
         button.addEventListener("click", event => {
-            event.preventDefault();
+          event.preventDefault();
+
             if (currentQuestion < 9) {
                 currentQuestion++;
                 showQuestion(currentQuestion);
             } else {
                 window.location.assign("results.html");
             }
-            
-        });
+             //validación por pregunta 
+            let inputs = document.querySelectorAll('input[type=radio]:checked');
+            let values=[];
+
+            for(input of inputs){
+                values.push(input.value)
+            }
+            if(values.includes(structure.solution)){
+                correctCounter++
+                }else{
+                    incorrectCounter++;
+                }
+        });  
     }
 });
+
+let score =document.querySelector('i');
+
+if(correctCounter<10){
+    score.innerHTML = '0'+correctCounter +'/10';
+}else{
+    score.innerHTML = correctCounter +'/10';
+}
+
+
+

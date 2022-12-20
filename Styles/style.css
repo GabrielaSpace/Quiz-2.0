@@ -99,7 +99,7 @@ input[type='radio'] {
     
 }
 
-input:checked+label {
+input:checked +label {
     background-color: var(--Dark-Electric-Blue);
     cursor: pointer;
     color: white;

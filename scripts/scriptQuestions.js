@@ -48,7 +48,7 @@ getQuestions().then(questions => {
         counter++
 
         let legend = document.createElement("legend");
-        legend.innerHTML = strsucture.question;
+        legend.innerHTML = structure.question;
         fieldset.appendChild(legend)
 
         let labels = document.createElement("div")
@@ -107,6 +107,3 @@ if(correctCounter<10){
 }else{
     score.innerHTML = correctCounter +'/10';
 }
-
-
-

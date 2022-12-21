@@ -289,7 +289,9 @@ button[type='submit'] {
     font-size: 1.5em;
 }
 
-
+#labels-escogidos {
+        margin-top: 3%;
+    }
 
 @media screen and (min-width: 763px) {
 
@@ -328,10 +330,6 @@ button[type='submit'] {
     legend {
         width: 95%;
     }
-    #texto-resultados {
-        font-size: 1.8em;
-    }
-    
   
     #empezar, #texto-bienvenida {
         padding-top: 10%;
@@ -359,6 +357,9 @@ button[type='submit'] {
     }
     #texto-resultados {
         font-size: 2em;
+    }
+    #labels-escogidos {
+        margin-top: 0;
     }
 }
 

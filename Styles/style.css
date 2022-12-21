@@ -56,7 +56,8 @@ fieldset,
 form,
 legend,
 label,
-button[type='submit'] {
+button[type='submit'],
+#labels-escogidos {
     border-radius: 5px;
     padding: 5%;
 }
@@ -121,7 +122,23 @@ button[type='submit'] {
     margin-top: 10%;
 }
 
+#labels-escogidos {
+    background-color: var(--Tiffany-Blue);
+    width: 50%;
+    text-align: center;
+    border: 2px solid var(--Persian-Green);
+}
 
+.correcta, .incorrecta {
+    font-weight: bold;
+}
+.correcta {
+    color: green;
+}
+
+.incorrecta {
+    color: red;
+}
 
     @media screen and (min-width: 763px) {
 
@@ -274,7 +291,9 @@ p,b{
     font-size: 1.5em;
 }
 
-
+#labels-escogidos {
+        margin-top: 3%;
+    }
 
 @media screen and (min-width: 763px) {
 
@@ -313,10 +332,6 @@ p,b{
     legend {
         width: 95%;
     }
-    #texto-resultados {
-        font-size: 1.8em;
-    }
-    
   
     #empezar, #texto-bienvenida {
         padding-top: 10%;
@@ -344,6 +359,9 @@ p,b{
     }
     #texto-resultados {
         font-size: 2em;
+    }
+    #labels-escogidos {
+        margin-top: 0;
     }
 }
 

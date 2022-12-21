@@ -2,6 +2,8 @@
 const lastItemKey = localStorage.key(localStorage.length - 1);
 const lastItemValue = JSON.parse(localStorage.getItem(lastItemKey));
 
+
+
 //Mostrar preguntas y respuestas escogidas corregidas
 
 let divEscogidas = document.querySelector("#labels-escogidos");
@@ -18,6 +20,7 @@ for (let i = 0; i < 10; i++){
 }
 
 
+
 //Mostrar resultados
 let score = document.querySelector('#score');
 
@@ -26,3 +29,11 @@ if (lastItemValue.correctCounter < 10) {
 } else {
     score.innerHTML = lastItemValue.correctCounter + '/10';
 }
+
+
+
+
+
+
+
+

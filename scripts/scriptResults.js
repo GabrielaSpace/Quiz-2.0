@@ -1,7 +1,22 @@
 //Obtener los resultados del LocalStorage
 const lastItemKey = localStorage.key(localStorage.length - 1);
 const lastItemValue = JSON.parse(localStorage.getItem(lastItemKey));
-lastItemValue
+
+//Mostrar respuestas escogidas corregidas
+
+let divEscogidas = document.querySelector("#labels-escogidos");
+
+for (let i = 0; i < 10; i++){
+    let respuesta = document.createElement("p")
+    if (lastItemValue.correct[i]){
+        respuesta.setAttribute("class", "correcta");
+    } else {
+        respuesta.setAttribute("class", "incorrecta");
+    }
+    respuesta.innerHTML = lastItemValue.answers[i];
+    divEscogidas.appendChild(respuesta);
+}
+
 
 //Mostrar resultados
 let score = document.querySelector('#score');

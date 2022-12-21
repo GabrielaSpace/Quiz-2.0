@@ -37,6 +37,11 @@ let incorrectCounter = 0;
 
 //Pintar en el DOM
 getQuestions().then(questions => {
+    //Para almacenar los resultados más adelante
+    let values = {
+        answers: [],
+        correct: []
+        };
     for (element of questions.results) {
         let structure = {
             "question": element.question,
@@ -75,8 +80,9 @@ getQuestions().then(questions => {
         button.setAttribute("type", "submit");
         button.innerHTML = "Enviar respuesta";
         fieldset.appendChild(button);
-
-
+        
+        
+        //Comportamiento del botón enviar respuesta después de cada pregunta
         button.addEventListener("click", event => {
             event.preventDefault();
 
@@ -90,24 +96,33 @@ getQuestions().then(questions => {
                 const currentDate = new Date();
                 const data = {
                     correctCounter: correctCounter,
-                    date: currentDate.toString()
+                    date: currentDate.toString(),
+                    answers: values.answers.slice(-10),
+                    correct: values.correct
                 };
 
                 const dataString = JSON.stringify(data);
                 localStorage.setItem(data.date, dataString);
             }
-            //validación por pregunta 
+            //Validación por pregunta 
             let inputs = document.querySelectorAll('input[type=radio]:checked');
-            let values = [];
+            
+            
 
             for (input of inputs) {
-                values.push(input.value)
+                values.answers.push(input.value);
             }
-            if (values.includes(structure.solution)) {
-                correctCounter++
+
+            
+
+            if (values.answers.includes(structure.solution)) {
+                correctCounter++;
+                values.correct.push(true); 
             } else {
-                incorrectCounter++;
+                values.correct.push(false);
             }
+
+            console.log(values);
         });
     }
 });

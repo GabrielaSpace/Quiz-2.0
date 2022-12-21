@@ -1,10 +1,18 @@
 :root {
     transition: all 0.15s;
     font-family: 'Roboto', sans-serif;
-    --Tiffany-Blue: #11bfae;
+    --Tiffany-Blue: #11BFAE;
     --Dark-Electric-Blue: #405D74;
     --Persian-Green: #0DA092;
+    --Cultured: #f2f2f0;
+    --Indigo-Dye: #1B3C59;
+    --Ivory: #FFFFEB;
 }
+
+body {
+    background-color: var(--Cultured);
+}
+
 
 section {
     width: 80%;
@@ -39,7 +47,7 @@ a.empezar {
 
 form,
 section {
-    background-color: #f2f2f0;
+    background-color: var(--Cultured);
     text-align: center;
 }
 
@@ -48,7 +56,8 @@ fieldset,
 form,
 legend,
 label,
-button[type='submit'] {
+button[type='submit'],
+#labels-escogidos {
     border-radius: 5px;
     padding: 5%;
 }
@@ -56,9 +65,13 @@ button[type='submit'] {
 fieldset {
     border: none;
     width: auto;
-    display: flex;
+    display: none;
     flex-flow: column wrap;
     align-items: center;
+}
+
+#fieldset0 {
+    display: block;
 }
 
 legend,
@@ -72,13 +85,13 @@ label {
 
 legend {
     background-color: var(--Tiffany-Blue);
-    color: #f2f2f0;
+    color: var(--Cultured);
     border: 2px solid var(--Persian-Green);
 }
 
 label {
-    background-color: #f2f2f0;
-    color: #1b3c59;
+    background-color: var(--Cultured);
+    color: var(--Indigo-Dye);
     margin-top: 10%;
 }
 
@@ -87,7 +100,7 @@ input[type='radio'] {
     
 }
 
-input:checked+label {
+input:checked +label {
     background-color: var(--Dark-Electric-Blue);
     cursor: pointer;
     color: white;
@@ -96,12 +109,12 @@ input:checked+label {
 h1 {
     color: var(--Dark-Electric-Blue);
     text-align: center;
-    margin-top: 10%;
+    margin-top: 4%;
 }
 
 button[type='submit'] {
     background-color: var(--Tiffany-Blue);
-    color: #f2f2f0;
+    color: var(--Cultured);
     padding: 3%;
     font-size: 1.2em;
     font-weight: bold;
@@ -109,7 +122,23 @@ button[type='submit'] {
     margin-top: 10%;
 }
 
+#labels-escogidos {
+    background-color: var(--Tiffany-Blue);
+    width: 50%;
+    text-align: center;
+    border: 2px solid var(--Persian-Green);
+}
 
+.correcta, .incorrecta {
+    font-weight: bold;
+}
+.correcta {
+    color: green;
+}
+
+.incorrecta {
+    color: red;
+}
 
     @media screen and (min-width: 763px) {
 
@@ -188,3 +217,175 @@ button[type='submit'] {
             margin-top: 2%;
         }
     }
+
+
+
+
+/*Home */
+
+#main-home{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-items: center;
+}
+ #bienvenida, #estadisticas{
+    border-radius: 7px;
+    background-color: var(--Ivory) ;
+    box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.26);
+    margin: 15px;
+    padding: 10px;
+    width: 300px; 
+
+    align-items: center;
+}
+
+@media screen and (min-width: 763px) {
+
+
+    #main-home{
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+
+    #bienvenida, #estadisticas{
+        margin: 80px;
+    }
+
+}
+
+/* Resultados */
+ #main-results{
+   background-color: var(--Ivory);
+   border-radius: 7px;
+   padding: 2%;
+   display: flex;
+   flex-flow: column wrap;
+   justify-content: center;
+   align-items: center;
+   margin: 2.5%;
+   width: 90%;
+   height: 800px;
+}  
+
+
+#número-aciertos p{
+    width: 150px;
+    height: 150px;
+    line-height: 150px;
+    border-radius: 50%;
+    background-color: var(--Tiffany-Blue);
+}
+
+#número-aciertos i{
+    text-align: center;
+    color: var(--Cultured);
+    font-size: 50px;
+    align-items: center;
+}
+
+#texto-resultados {
+    font-size: 1.5em;
+}
+
+
+
+@media screen and (min-width: 763px) {
+
+    section form,
+    legend,
+    label,
+    button[type='submit'] {
+        padding: 4%;
+    }
+
+    legend,
+    label,
+    button[type='submit'] {
+        margin-top: 5%;
+    }
+
+    legend,
+    label {
+        font-size: 1.5em;
+    }
+    form {
+        padding: 15px;
+        text-align: center;
+    }
+    
+    h1 {
+        font-size: 3em;
+    }
+
+    #div-questions {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    legend {
+        width: 95%;
+    }
+    #texto-resultados {
+        font-size: 1.8em;
+    }
+    
+  
+    #empezar, #texto-bienvenida {
+        padding-top: 10%;
+    }
+}
+
+@media screen and (min-width: 1072px) {
+
+    legend,
+    label {
+        font-size: 1.6em;
+    }
+
+    form,
+    legend,
+    label,
+    button[type='submit'] {
+        padding: 3%;
+    }
+
+    legend,
+    label,
+    button[type='submit'] {
+        margin-top: 3%;
+    }
+    #texto-resultados {
+        font-size: 2em;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+
+    legend,
+    label {
+        font-size: 1.7em;
+    }
+
+    form,
+    legend,
+    label,
+    button[type='submit'] {
+        padding: 2%;
+    }
+
+    legend,
+    label,
+    button[type='submit'] {
+        margin-top: 2%;
+    }
+    #texto-resultados {
+        font-size: 2.5em;
+    }
+}
+
+
+
+

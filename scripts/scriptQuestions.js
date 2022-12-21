@@ -100,7 +100,7 @@ getQuestions().then(questions => {
                     answers: values.answers.slice(-10),
                     correct: values.correct
                 };
-
+                
                 const dataString = JSON.stringify(data);
                 localStorage.setItem(data.date, dataString);
             }
@@ -121,8 +121,6 @@ getQuestions().then(questions => {
             } else {
                 values.correct.push(false);
             }
-
-            console.log(values);
         });
     }
 });

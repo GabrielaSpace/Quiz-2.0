@@ -205,7 +205,9 @@ button[type='submit'] {
 
 
 /*Home */
-
+p,b{
+    font-size: 12px;
+}
 #main-home{
     display: flex;
     flex-flow: column wrap;

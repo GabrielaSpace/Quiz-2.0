@@ -38,7 +38,7 @@
 
   // para almacenar  la partida 1
 
-  const firstPlayedKey = localStorage.key(localStorage.length-3);
+  const firstPlayedKey = localStorage.key(localStorage.length-4);
   const firstPlayedValue = JSON.parse(localStorage.getItem(firstPlayedKey));
   const res1= firstPlayedValue.correctCounter;
   const date1= firstPlayedValue.date.slice(0,25);

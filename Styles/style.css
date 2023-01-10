@@ -112,11 +112,11 @@ h1 {
     margin-top: 4%;
 }
 
-button[type='submit'] {
+button[type='submit'], .botCreate {
     background-color: var(--Tiffany-Blue);
     color: var(--Cultured);
     padding: 3%;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: bold;
     border: 2px solid var(--Persian-Green);
     margin-top: 10%;
@@ -238,9 +238,17 @@ p,b{
     margin: 15px;
     padding: 10px;
     width: 300px; 
-
     align-items: center;
 }
+
+.Account{
+    font-size: 12px;
+    padding: 3px;
+    margin: 3px;
+    background-color: transparent;
+}
+
+
 
 @media screen and (min-width: 763px) {
 

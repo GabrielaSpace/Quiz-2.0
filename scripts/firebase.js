@@ -5,7 +5,7 @@ const firebaseConfig = {
     storageBucket: "quiz2-65615.appspot.com",
     messagingSenderId: "27725364648",
     appId: "1:27725364648:web:dd8dc5efd1f6c4d99e319d"
-};
+  };
 
 firebase.initializeApp(firebaseConfig);// Inicializaar app Firebase
 

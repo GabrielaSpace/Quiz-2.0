@@ -18,7 +18,7 @@ const signUpUser = (email, password) => {
     .then((userCredential) => {
       // Signed in
       let user = userCredential.user;
-      alert(`se ha registrado ${user.email}`);
+      showMessage(`se ha registrado ${user.email}`);
       // ...
       // Guarda El usuario en Firestore
       createUser({
@@ -27,7 +27,7 @@ const signUpUser = (email, password) => {
       });
     })
     .catch((error) => {
-      console.log("Error en el sistema" + error.message);
+      showMessage("Error en el sistema" + error.message);
     });
 };
 document.getElementById("form1").addEventListener("submit", function (event) {
@@ -43,7 +43,7 @@ const signInUser = (email, password) => {
     .then((userCredential) => {
       // Signed in
       let user = userCredential.user;
-      alert(`se ha logado ${user.email}`)
+      showMessage(`se ha logado ${user.email}`)
     })
     .catch((error) => {
       console.log(error.code)
@@ -53,9 +53,9 @@ const signInUser = (email, password) => {
 const signOut = () => {
   let user = firebase.auth().currentUser;
   firebase.auth().signOut().then(() => {
-    console.log("Sale del sistema: " + user.email)
+    showMessage("Sale del sistema: " + user.email)
   }).catch((error) => {
-    console.log("Hubo un error: " + error);
+    showMessage("Hubo un error: " + error);
   });
 }
 document.getElementById("form2").addEventListener("submit", function (event) {
@@ -70,8 +70,24 @@ document.getElementById("signOut").addEventListener("click", signOut);
 // Controlar usuario logado
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    console.log(`Está en el sistema:${user.email}`);
+    showMessage(`Está en el sistema:${user.email}`);
   } else {
-    console.log("No hay usuarios en el sistema");
+    showMessage("No hay usuarios en el sistema");
   }
 });
+
+function showMessage(message, type = "success") {
+  Toastify({
+    text: message,
+    duration: 4000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", 
+    position: "center", 
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: type === "success" ? "green" : "red",
+    },
+  }).showToast();
+}

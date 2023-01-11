@@ -1,3 +1,20 @@
+function showMessage(message, type = "success") {
+  Toastify({
+    text: message,
+    duration: 4000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", 
+    position: "center", 
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: type === "success" ? "green" : "red",
+    },
+  }).showToast();
+}
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyA9THvy5iaDALxLpY13-PKGXHO8rDZKFZY",
   authDomain: "quiz2-65615.firebaseapp.com",
@@ -27,7 +44,7 @@ const signUpUser = (email, password) => {
       });
     })
     .catch((error) => {
-      showMessage("Error en el sistema" + error.message);
+      showMessage("Error en el sistema" + error.message,error);
     });
 };
 document.getElementById("form1").addEventListener("submit", function (event) {
@@ -76,18 +93,3 @@ firebase.auth().onAuthStateChanged(function (user) {
   }
 });
 
-function showMessage(message, type = "success") {
-  Toastify({
-    text: message,
-    duration: 4000,
-    destination: "https://github.com/apvarun/toastify-js",
-    newWindow: true,
-    close: true,
-    gravity: "top", 
-    position: "center", 
-    stopOnFocus: true, // Prevents dismissing of toast on hover
-    style: {
-      background: type === "success" ? "green" : "red",
-    },
-  }).showToast();
-}

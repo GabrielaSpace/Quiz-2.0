@@ -1,3 +1,25 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyA9THvy5iaDALxLpY13-PKGXHO8rDZKFZY",
+    authDomain: "quiz2-65615.firebaseapp.com",
+    projectId: "quiz2-65615",
+    storageBucket: "quiz2-65615.appspot.com",
+    messagingSenderId: "27725364648",
+    appId: "1:27725364648:web:dd8dc5efd1f6c4d99e319d"
+};
+
+firebase.initializeApp(firebaseConfig);// Inicializaar app Firebase
+
+const db = firebase.firestore();// db representa mi BBDD //inicia Firestore
+const partidasDoc = db.collection("partidas");
+
+async function addPartida(puntuacion, fecha) {
+    let userId = firebase.auth().currentUser.uid;
+    await partidasDoc.doc(userId).update({
+        partidas: firebase.firestore.FieldValue.arrayUnion({ puntuacion, fecha })
+    });
+}
+
+
 //Desordenar arrays
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -41,7 +63,7 @@ getQuestions().then(questions => {
     let values = {
         answers: [],
         correct: []
-        };
+    };
     for (element of questions.results) {
         let structure = {
             "question": element.question,
@@ -80,8 +102,8 @@ getQuestions().then(questions => {
         button.setAttribute("type", "submit");
         button.innerHTML = "Enviar respuesta";
         fieldset.appendChild(button);
-        
-        
+
+
         //Comportamiento del botón enviar respuesta después de cada pregunta
         button.addEventListener("click", event => {
             event.preventDefault();
@@ -91,7 +113,7 @@ getQuestions().then(questions => {
                 currentQuestion++;
                 showQuestion(currentQuestion);
             } else {
-                window.location.assign("results.html");
+                
                 //Almacenamiento de resultados
                 const currentDate = new Date();
                 const data = {
@@ -100,24 +122,25 @@ getQuestions().then(questions => {
                     answers: values.answers.slice(-10),
                     correct: values.correct
                 };
+                addPartida(data.correctCounter, data.date).then(() => {
+                    window.location.assign("results.html");
+                })
                 
-                const dataString = JSON.stringify(data);
-                localStorage.setItem(data.date, dataString);
             }
             //Validación por pregunta 
             let inputs = document.querySelectorAll('input[type=radio]:checked');
-            
-            
+
+
 
             for (input of inputs) {
                 values.answers.push(input.value);
             }
 
-            
+
 
             if (values.answers.includes(structure.solution)) {
                 correctCounter++;
-                values.correct.push(true); 
+                values.correct.push(true);
             } else {
                 values.correct.push(false);
             }

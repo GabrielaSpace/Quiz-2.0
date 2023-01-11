@@ -79,6 +79,22 @@ firebase.auth().onAuthStateChanged(function (user) {
 });
 
   //Obtener los cuatro últimos resultados para home 
+resultado=['',];
+intento=[];
+
+for(let i=1; i<localStorage.length;i++){
+
+  const partidaJugadaKey = localStorage.key(localStorage.length-i);
+  const partidaJugadaValue = JSON.parse(localStorage.getItem(partidaJugadaKey));
+  resultado.push = partidaJugadaValue.correctCounter;
+  intento.push= partidaJugadaValue.data;
+  console.log(intento)
+  console.log(resultado)
+}
+
+
+
+
 
   //Defino una variable para almacenar las ultimas cuatro partidas jugadas 
   const lastPlayedKey = localStorage.key(localStorage.length - 1);
@@ -89,7 +105,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   let score4 =document.querySelector('#lastPlayed');
   score4.innerHTML = `Correct Answers: ${res4}`;
   let scoreDate4=document.querySelector('#date4');
-  scoreDate4.innerHTML = `4th attempt: ${date4}`;
+  scoreDate4.innerHTML = `1st attempt: ${date4}`;
 
  // para almacenar  la partida 3
   const thirdPlayedKey = localStorage.key(localStorage.length-2);
@@ -100,7 +116,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   let score3 =document.querySelector('#thirdPlayed');
   score3.innerHTML =`Correct Answers: ${res3}`;
   let scoreDate3=document.querySelector('#date3');
-  scoreDate3.innerHTML = `3rd attempt: ${date3}`;
+  scoreDate3.innerHTML = `2nd attempt:  ${date3}`;
 
  // para almacenar  la partida 2
 
@@ -112,7 +128,7 @@ firebase.auth().onAuthStateChanged(function (user) {
   let score2 =document.querySelector('#secondPlayed');
   score2.innerHTML = `Correct Answers: ${res2}`;
   let scoreDate2=document.querySelector('#date2');
-  scoreDate2.innerHTML = `2nd attempt: ${date2}`;
+  scoreDate2.innerHTML = `3rd attempt:${date2}`;
 
   // para almacenar  la partida 1
 
@@ -124,17 +140,25 @@ firebase.auth().onAuthStateChanged(function (user) {
   let score1 =document.querySelector('#firstPlayed');
   score1.innerHTML = `Correct Answers: ${res1}`;
   let scoreDate1=document.querySelector('#date1');
-  scoreDate1.innerHTML = `1st attempt: ${date1}`;
+  scoreDate1.innerHTML = `4th attempt: ${date1}`;
 
 //Almaceno las 4 variables en un array 
 
-const hits = ['',res1,res2,res3,res4];
+/* const prueba =['',]
+for(let i=0; i< localStorage.length;i++){
 
+  prueba.push(res1,res2,res3,res4)
+  console.log(prueba);
+}
+const hits = ['',res1,res2,res3,res4];
+ */
 var data = {
   // A labels array that can contain any sort of values
-  labels: ['', '1st', '2nd', '3rd', '4th'],
+  labels: intento,
+  // labels: ['', '1st', '2nd', '3rd', '4th'],
   // Our series array that contains series objects or in this case series data arrays
-  series: [hits]
+  // series: [prueba]
+  series: [resultado],
 };
 const options = {
   axisY:{

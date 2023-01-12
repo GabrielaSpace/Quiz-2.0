@@ -235,20 +235,38 @@ p,b{
     border-radius: 7px;
     background-color: var(--Ivory) ;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.26);
-    margin: 15px;
-    padding: 10px;
+    /* padding: 10px; */
     width: 300px; 
     align-items: center;
 }
+#form1,#form2{
+display: block;
+}
+#form1{
+    display: block;
+    height: 210px;
+    margin: 0px 3px 10px 3px;
+    width: 280px;
+}
+#form2{
+    height: 180px;
 
+}
 .Account{
     font-size: 12px;
     padding: 3px;
     margin: 3px;
     background-color: transparent;
+    border-radius: 5px;
+    height: 10px;
 }
 
-
+.botCreate{
+    width: 80px;
+    padding: 5px;
+    font-size: 12px;
+    border-radius: 10px;
+}
 
 @media screen and (min-width: 763px) {
 

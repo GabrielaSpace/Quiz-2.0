@@ -10,14 +10,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);// Inicializaar app Firebase
 
 const db = firebase.firestore();// db representa mi BBDD //inicia Firestore
-const partidasDoc = db.collection("partidas");
-
-function addPartida(puntuacion, fecha) {
-  let userId = firebase.auth().currentUser.uid;
-  partidasDoc.doc(userId).update({
-    partidas: firebase.firestore.FieldValue.arrayUnion({ puntuacion, fecha })
-  });
-}
 
 const signUpUser = (email, password) => {
   firebase
@@ -26,10 +18,31 @@ const signUpUser = (email, password) => {
     .then((userCredential) => {
       // Signed in
       let user = userCredential.user;
-      alert(`se ha registrado ${user.email}`);
-      partidasDoc.doc(user.uid).set({ partidas: [] })
+      showMessage(`se ha registrado ${user.email}`);
+      // ...
+      // Guarda El usuario en Firestore
+      createUser({
+        id: user.uid,
+        email: user.email
+      });
     })
-    
+    .catch((error) => {
+      switch (error.code) {
+        case "auth/email-already-in-use":
+          showMessage("Email already in use", error);
+          break;
+        case "auth/auth/invalid-email":
+          showMessage("Invalid email",error);
+          break;
+        case "auth/weak-password":
+          showMessage("Weak password, the password should be at least 6 characters",error);
+          break;
+        default:
+          showMessage("Something went wrong",error);
+          break;
+      }
+      
+    });
 };
 document.getElementById("form1").addEventListener("submit", function (event) {
   event.preventDefault();
@@ -44,27 +57,36 @@ const signInUser = (email, password) => {
     .then((userCredential) => {
       // Signed in
       let user = userCredential.user;
-      alert(`se ha logado ${user.email}`)
+      showMessage(`se ha logado ${user.email}`)
     })
     .catch((error) => {
-      console.log(error.code)
-      console.log(error.message)
+      
+      switch (error.code) {
+        case "auth/wrong-password":
+          showMessage("Wrong password",error);
+          break;
+        case "auth/user-not-found":
+          showMessage("User not found",error);
+          break;
+        default:
+          showMessage("wrong password",error);
+          break;
+}
     });
 }
 const signOut = () => {
   let user = firebase.auth().currentUser;
   firebase.auth().signOut().then(() => {
-    console.log("Sale del sistema: " + user.email)
+    showMessage("Sale del sistema: " + user.email)
   }).catch((error) => {
-    console.log("Hubo un error: " + error);
+    showMessage("Hubo un error: " + error);
   });
 }
-
 document.getElementById("form2").addEventListener("submit", function (event) {
   event.preventDefault();
   let email = event.target.elements.email2.value;
   let pass = event.target.elements.pass3.value;
-  signInUser(email, pass);
+  signInUser(email, pass)
   document.getElementById("form2").reset();
 })
 document.getElementById("signOut").addEventListener("click", signOut);
@@ -72,14 +94,35 @@ document.getElementById("signOut").addEventListener("click", signOut);
 // Controlar usuario logado
 firebase.auth().onAuthStateChanged(function (user) {
   if (user) {
-    console.log(`Está en el sistema:${user.email}`);
+    showMessage(`Está en el sistema:${user.email}`);
   } else {
-    console.log("No hay usuarios en el sistema");
+    showMessage("No hay usuarios en el sistema");
   }
 });
 
-  //Obtener los cuatro últimos resultados para home 
-resultado=['',];
+function showMessage(message, type = "success") {
+  Toastify({
+    text: message,
+    duration: 4000,
+    destination: "https://github.com/apvarun/toastify-js",
+    newWindow: true,
+    close: true,
+    gravity: "top", 
+    position: "center", 
+    stopOnFocus: true, // Prevents dismissing of toast on hover
+    style: {
+      background: type === "success" ? "green" : "red",
+    },
+  }).showToast();
+}
+ 
+
+
+
+
+
+//Obtener los cuatro últimos resultados para home 
+resultado=[''];
 intento=[];
 
 for(let i=1; i<localStorage.length;i++){
@@ -144,18 +187,16 @@ for(let i=1; i<localStorage.length;i++){
 
 //Almaceno las 4 variables en un array 
 
-/* const prueba =['',]
+/* const prueba =[]
 for(let i=0; i< localStorage.length;i++){
 
   prueba.push(res1,res2,res3,res4)
   console.log(prueba);
-}
+} */
 const hits = ['',res1,res2,res3,res4];
- */
 var data = {
   // A labels array that can contain any sort of values
-  labels: intento,
-  // labels: ['', '1st', '2nd', '3rd', '4th'],
+ labels: ['', '1st', '2nd', '3rd', '4th'],
   // Our series array that contains series objects or in this case series data arrays
   // series: [prueba]
   series: [resultado],
@@ -176,97 +217,3 @@ const options = {
 new Chartist.Line('.ct-chart', data, options);
 
 
-
-const firebaseConfig = {
-  apiKey: "AIzaSyA9THvy5iaDALxLpY13-PKGXHO8rDZKFZY",
-  authDomain: "quiz2-65615.firebaseapp.com",
-  projectId: "quiz2-65615",
-  storageBucket: "quiz2-65615.appspot.com",
-  messagingSenderId: "27725364648",
-  appId: "1:27725364648:web:dd8dc5efd1f6c4d99e319d"
-};
-
-firebase.initializeApp(firebaseConfig);// Inicializaar app Firebase
-
-const db = firebase.firestore();// db representa mi BBDD //inicia Firestore
-
-const signUpUser = (email, password) => {
-  firebase
-    .auth()
-    .createUserWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-      let user = userCredential.user;
-      showMessage(`se ha registrado ${user.email}`);
-      // ...
-      // Guarda El usuario en Firestore
-      createUser({
-        id: user.uid,
-        email: user.email
-      });
-    })
-    .catch((error) => {
-      showMessage("Error en el sistema" + error.message);
-    });
-};
-document.getElementById("form1").addEventListener("submit", function (event) {
-  event.preventDefault();
-  let email = event.target.elements.email.value;
-  let pass = event.target.elements.pass.value;
-  let pass2 = event.target.elements.pass2.value;
-  pass === pass2 ? signUpUser(email, pass) : alert("error passwords didn´t match");
-  document.getElementById("form1").reset();
-})
-const signInUser = (email, password) => {
-  firebase.auth().signInWithEmailAndPassword(email, password)
-    .then((userCredential) => {
-      // Signed in
-      let user = userCredential.user;
-      showMessage(`se ha logado ${user.email}`)
-    })
-    .catch((error) => {
-      console.log(error.code)
-      console.log(error.message)
-    });
-}
-const signOut = () => {
-  let user = firebase.auth().currentUser;
-  firebase.auth().signOut().then(() => {
-    showMessage("Sale del sistema: " + user.email)
-  }).catch((error) => {
-    showMessage("Hubo un error: " + error);
-  });
-}
-document.getElementById("form2").addEventListener("submit", function (event) {
-  event.preventDefault();
-  let email = event.target.elements.email2.value;
-  let pass = event.target.elements.pass3.value;
-  signInUser(email, pass)
-  document.getElementById("form2").reset();
-})
-document.getElementById("signOut").addEventListener("click", signOut);
-// Listener de usuario en el sistema
-// Controlar usuario logado
-firebase.auth().onAuthStateChanged(function (user) {
-  if (user) {
-    showMessage(`Está en el sistema:${user.email}`);
-  } else {
-    showMessage("No hay usuarios en el sistema");
-  }
-});
-
-function showMessage(message, type = "success") {
-  Toastify({
-    text: message,
-    duration: 4000,
-    destination: "https://github.com/apvarun/toastify-js",
-    newWindow: true,
-    close: true,
-    gravity: "top", 
-    position: "center", 
-    stopOnFocus: true, // Prevents dismissing of toast on hover
-    style: {
-      background: type === "success" ? "green" : "red",
-    },
-  }).showToast();
-}

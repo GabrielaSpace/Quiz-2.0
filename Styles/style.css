@@ -26,14 +26,17 @@ h2 {
 
 a.empezar {
     display: inline-block;
-    padding: 10px 20px;
+    width: 90px;
+    padding: 7px;
+    font-size: 14px;
+    border-radius: 10px; 
     text-decoration: none;
     color: #fff;
     background-color: var(--Tiffany-Blue);
     border: 2px solid var(--Persian-Green);
-    border-radius: 4px;
-    margin: 5% 0;
-}
+    margin: 15px;
+
+} 
 
 #historial {
     padding-bottom: 5%;

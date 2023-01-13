@@ -1,5 +1,5 @@
 # Quiz-2.0
-Para acceder directamente al cuestionario: https://zebermvp.github.io/Quiz-2.0/index.html
+Para acceder directamente al cuestionario: https://zebermvp.github.io/Quiz-2.0/
 
 El cuestionario cuenta con diez preguntas y cuatro respuestas por cada pregunta (solo una respuesta correcta). Las preguntas son extraidas de manera aleatoria de https://opentdb.com/. La página inicial muestra una gráfica (cuando hayas jugado un mínimo de cuatro partidas) y el historial de las útimas cuatro partidas. El registro se lleva en Firebase. Las preguntas son mostradas de una en una según se dé al botón de enviar respuesta. Al final se muestra el número de aciertos, así como una correción de cada una de las respuestas seleccionadas. Hay un botón que devuelve a la página inicial para volver a jugar y ver las estadísticas.
 

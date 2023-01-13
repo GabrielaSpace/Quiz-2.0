@@ -1,3 +1,30 @@
+const firebaseConfig = {
+    apiKey: "AIzaSyA9THvy5iaDALxLpY13-PKGXHO8rDZKFZY",
+    authDomain: "quiz2-65615.firebaseapp.com",
+    projectId: "quiz2-65615",
+    storageBucket: "quiz2-65615.appspot.com",
+    messagingSenderId: "27725364648",
+    appId: "1:27725364648:web:dd8dc5efd1f6c4d99e319d"
+};
+
+firebase.initializeApp(firebaseConfig);// Inicializar app Firebase
+
+const db = firebase.firestore();// db representa mi BBDD //inicia Firestore
+const partidasDoc = db.collection("partidas");
+
+//Almacenar resultados en Firebase
+async function addPartida(puntuacion, fecha, answers, correct) {
+    await firebase.auth().onAuthStateChanged(async () => {
+        let userId = await firebase.auth().currentUser.uid;
+        await partidasDoc.doc(userId).update({
+            partidas: firebase.firestore.FieldValue.arrayUnion({ puntuacion, fecha, answers, correct })
+        });
+
+        window.location.assign("results.html"); // Carga la página de resultados tras añadirlos al storage de Firebase
+    })
+}
+
+
 //Desordenar arrays
 function shuffle(array) {
     for (let i = array.length - 1; i > 0; i--) {
@@ -7,7 +34,7 @@ function shuffle(array) {
     return array;
 }
 
-let currentQuestion = 0;
+let currentQuestion = 0; // Contabilizar las preguntas que han salido
 
 
 //Sacar preguntas de la api
@@ -41,7 +68,7 @@ getQuestions().then(questions => {
     let values = {
         answers: [],
         correct: []
-        };
+    };
     for (element of questions.results) {
         let structure = {
             "question": element.question,
@@ -80,19 +107,29 @@ getQuestions().then(questions => {
         button.setAttribute("type", "submit");
         button.innerHTML = "Enviar respuesta";
         fieldset.appendChild(button);
-        
-        
+
         //Comportamiento del botón enviar respuesta después de cada pregunta
         button.addEventListener("click", event => {
             event.preventDefault();
+            //Validación por pregunta 
+            let inputs = document.querySelectorAll('input[type=radio]:checked');
 
+            for (input of inputs) {
+                values.answers.push(input.value);
+            }
+
+            if (values.answers.includes(structure.solution)) {
+                correctCounter++;
+                values.correct.push(true);
+            } else {
+                values.correct.push(false);
+            }
             //Siguiente pregunta o resultados
             if (currentQuestion < 9) {
                 currentQuestion++;
                 showQuestion(currentQuestion);
             } else {
-                window.location.assign("results.html");
-                //Almacenamiento de resultados
+                //Almacenar resultados
                 const currentDate = new Date();
                 const data = {
                     correctCounter: correctCounter,
@@ -100,27 +137,9 @@ getQuestions().then(questions => {
                     answers: values.answers.slice(-10),
                     correct: values.correct
                 };
-                
-                const dataString = JSON.stringify(data);
-                localStorage.setItem(data.date, dataString);
-            }
-            //Validación por pregunta 
-            let inputs = document.querySelectorAll('input[type=radio]:checked');
-            
-            
-
-            for (input of inputs) {
-                values.answers.push(input.value);
+                addPartida(data.correctCounter, data.date, data.answers, data.correct);
             }
 
-            
-
-            if (values.answers.includes(structure.solution)) {
-                correctCounter++;
-                values.correct.push(true); 
-            } else {
-                values.correct.push(false);
-            }
         });
     }
 });

@@ -111,23 +111,6 @@ getQuestions().then(questions => {
         //Comportamiento del botón enviar respuesta después de cada pregunta
         button.addEventListener("click", event => {
             event.preventDefault();
-
-            //Siguiente pregunta o resultados
-            if (currentQuestion < 9) {
-                currentQuestion++;
-                showQuestion(currentQuestion);
-            } else {
-
-                //Almacenar resultados
-                const currentDate = new Date();
-                const data = {
-                    correctCounter: correctCounter,
-                    date: currentDate.toString(),
-                    answers: values.answers.slice(-10),
-                    correct: values.correct
-                };
-                addPartida(data.correctCounter, data.date, data.answers, data.correct);
-            }
             //Validación por pregunta 
             let inputs = document.querySelectorAll('input[type=radio]:checked');
 
@@ -141,6 +124,22 @@ getQuestions().then(questions => {
             } else {
                 values.correct.push(false);
             }
+            //Siguiente pregunta o resultados
+            if (currentQuestion < 9) {
+                currentQuestion++;
+                showQuestion(currentQuestion);
+            } else {
+                //Almacenar resultados
+                const currentDate = new Date();
+                const data = {
+                    correctCounter: correctCounter,
+                    date: currentDate.toString(),
+                    answers: values.answers.slice(-10),
+                    correct: values.correct
+                };
+                addPartida(data.correctCounter, data.date, data.answers, data.correct);
+            }
+
         });
     }
 });

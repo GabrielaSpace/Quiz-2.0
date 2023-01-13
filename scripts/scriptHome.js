@@ -83,33 +83,33 @@ const obtenerUltimasPartidas = async () => {
     const terceraPartida = await partidasData.partidas[partidasData.partidas.length - 2];
     const segundaPartida = await partidasData.partidas[partidasData.partidas.length - 3];
     const primeraPartida = await partidasData.partidas[partidasData.partidas.length - 4];
-    let resultado = ['',];
+    let resultado = [];
     let intento = [];
     resultado.push(cuartaPartida.puntuacion, terceraPartida.puntuacion, segundaPartida.puntuacion, primeraPartida.puntuacion);
     intento.push(cuartaPartida.fecha.slice(3, 16), terceraPartida.fecha.slice(3, 16), segundaPartida.fecha.slice(3, 16), primeraPartida.fecha.slice(3, 16));
     // Variables para almacenar las ultimas cuatro partidas jugadas 
-    const res4 = resultado[1];
+    const res4 = resultado[0];
     const date4 = intento[0];
     let score4 = document.querySelector('#lastPlayed');
     score4.innerHTML = `Respuestas correctas: ${res4}`;
     let scoreDate4 = document.querySelector('#date4');
     scoreDate4.innerHTML = date4;
 
-    const res3 = resultado[2];
+    const res3 = resultado[1];
     const date3 = intento[1];
     let score3 = document.querySelector('#thirdPlayed');
     score3.innerHTML = `Respuestas correctas: ${res3}`;
     let scoreDate3 = document.querySelector('#date3');
     scoreDate3.innerHTML = date3;
 
-    const res2 = resultado[3];
+    const res2 = resultado[2];
     const date2 = intento[2];
     let score2 = document.querySelector('#secondPlayed');
     score2.innerHTML = `Respuestas correctas: ${res2}`;
     let scoreDate2 = document.querySelector('#date2');
     scoreDate2.innerHTML = date2;
 
-    const res1 = resultado[4];
+    const res1 = resultado[3];
     const date1 = intento[3];
     let score1 = document.querySelector('#firstPlayed');
     score1.innerHTML = `Respuestas correctas: ${res1}`;

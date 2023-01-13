@@ -11,6 +11,10 @@
     <link rel="stylesheet" href="./styles/style.css">
     <link rel="stylesheet" href="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.css">
     <script src="//cdn.jsdelivr.net/chartist.js/latest/chartist.min.js"></script>
+
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
 </head>
 
 <body>
@@ -18,17 +22,43 @@
         <h1>QUIZ 2.0</h1>
     </header>
     <main id="main-home">
+
         <section id="bienvenida">
+            <h2 id="texto-bienvenida">¡Bienvenido al cuestionario!</h2>
+            <h5>(Debes registrarte para poder jugar)</h5>
+
+            <form class='Account' id="form1" action="#" method="POST">
+                <h4>Crear cuenta</h4>
+                <label class='Account' for="email">Email:</label><br>
+                <input class='Account' type="email" id="email" name="email" placeholder="Introduce email..."><br>
+                <label class='Account' for="pass">Contraseña:</label><br>
+                <input class='Account' type="password" id="pass" name="pass" placeholder="Introduce password..."><br>
+                <label class='Account' for="pass2">Repite contraseña:</label><br>
+                <input class='Account' type="password" id="pass2" name="pass2" placeholder="Repite password..."><br><br>
+                <input id='signUp' class='botCreate' type="submit" value="Crear">
+            </form>
+
+            <form class='Account' id="form2" action="#" method="POST">
+                <h4>Iniciar sesión</h4>
+                <label class='Account' for="email2">Email:</label><br>
+                <input class='Account' type="email" id="email2" name="email2" placeholder="Introduce email..."><br>
+                <label class='Account' for="pass3">Contraseña:</label><br>
+                <input class='Account' type="password" id="pass3" name="pass3" placeholder="Introduce password..."><br>
+                <input id='signIn' class='botCreate' type="submit" value="Entrar">
+            </form>
+
+            <button class='botCreate' id="signOut">Salir</button>
+
             <p>
-                <h2 id="texto-bienvenida">¡Bienvenido al cuestionario!</h2>
-            </p>
+
             <nav>
-                <a href="./pages/questions.html" class="empezar">Empezar</a>
+                <a id="empezar" class="empezar">Empezar</a>
             </nav>
         </section>
         <section id="estadisticas">
             <p>
-                <h2>Tus estadísticas</h2>
+            <h2>Tus estadísticas</h2>
+            <h5>(A partir de cuatro partidas)</h5>
             </p>
             <div class="ct-chart ct-perfect-fourth"></div>
             <div id="historial">
@@ -43,11 +73,12 @@
             </div>
         </section>
     </main>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
     <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
-    <script src="./scripts/firebase.js"></script>
     <script src="./scripts/scriptHome.js"></script>
 </body>
 

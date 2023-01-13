@@ -143,4 +143,15 @@ const obtenerUltimasPartidas = async () => {
 
 obtenerUltimasPartidas()
 
+const empezar = document.querySelector("#empezar");
+empezar.addEventListener("click", () => {
+  firebase.auth().onAuthStateChanged(function (user) {
+    if (user) {
+      window.location.assign("./pages/questions.html");
+    } else {
+      alert("Debes iniciar sesión antes de poder jugar");
+    }
+  });
+  
+})
 

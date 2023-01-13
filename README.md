@@ -7,7 +7,7 @@ Es necesario registrarse para poder jugar. El registro se hace mediante correo y
 
 Inicio
 
-![image](https://user-images.githubusercontent.com/106594858/212376051-454260f8-f524-4f5a-93f7-7b35f5bcca3c.png)
+![image](https://user-images.githubusercontent.com/106594858/212432533-2e9a6f4f-59db-4817-914b-ab4e35dbae50.png)
 
 Estructura de pregunta
 
